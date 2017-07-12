@@ -57,7 +57,7 @@ data:
     {{- if .Values.acme.enabled }}
     [acme]
     email = "{{ .Values.acme.email }}"
-    storage = "/acme/acme.json"
+    storage = "{{ .Values.acme.storagePath }}"
     entryPoint = "https"
     onHostRule = true
     {{- if .Values.acme.staging }}
