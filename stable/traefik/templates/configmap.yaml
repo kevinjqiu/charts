@@ -74,3 +74,6 @@ data:
       {{- end}}
       {{- end}}
     {{- end }}
+    {{- if .Values.backends.enabled }}
+{{ .Values.backends.config | indent 4 }}
+    {{- end }}

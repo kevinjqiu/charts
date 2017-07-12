@@ -62,3 +62,6 @@ accessLogs:
 #  labelSelector:
 rbac:
   enabled: false
+backends:
+  enabled: false
+  config: nil
