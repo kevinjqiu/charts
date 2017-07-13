@@ -25,9 +25,13 @@ acme:
   enabled: false
   email: admin@example.com
   staging: true
-  storagePath: "/acme/acme.json"
   # Save ACME certs to a persistent volume. WARNING: If you do not do this, you will re-request
   # certs every time a pod (re-)starts and you WILL be rate limited!
+  storagePath: "/acme/acme.json"
+  ## Set dnsProvider to perform domain verification using dns challenge
+  # dnsProvider: nil
+  ## Save ACME certs to a persistent volume. WARNING: If you do not do this, you will re-request
+  ## certs every time a pod (re-)starts and you WILL be rate limited!
   persistence:
     enabled: true
     ## If defined, volume.beta.kubernetes.io/storage-class: <storageClass>
@@ -52,6 +56,8 @@ service:
   #   key: value
 gzip:
   enabled: true
+## Environment variables for the Traefik pod
+env:
 accessLogs:
   enabled: false
   ## Path to the access logs file. If not provided, Traefik defaults it to stdout.
