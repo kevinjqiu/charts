@@ -83,3 +83,7 @@ data:
     {{- if .Values.backends.enabled }}
 {{ .Values.backends.config | indent 4 }}
     {{- end }}
+    {{- if .Values.metrics.enabled }}
+    [web.metrics.prometheus]
+        Buckets=[0.1,0.3,1.2,5.0]
+    {{- end}}

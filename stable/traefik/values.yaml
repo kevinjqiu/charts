@@ -49,6 +49,8 @@ dashboard:
   auth:
     # basic:
     #   username: password
+metrics:
+  enabled: false
 service:
   # annotations:
   #   key: value
